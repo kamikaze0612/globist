@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-img {
+  background-image: linear-gradient(
+      to right,
+      rgba(233, 236, 239, 0.7),
+      rgba(233, 236, 239, 0.7)
+    ),
+    url(./assets//hero-back.jpg);
+}
+
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(farthest-side, #000 90%, #0000);
+  background:
+    var(--_g) 0 50%,
+    var(--_g) 50% 50%,
+    var(--_g) 50% 50%,
+    var(--_g) 100% 50%;
+  background-size: 25% 50%;
+  animation: loading 1s infinite linear;
+}
+@keyframes loading {
+  33% {
+    background-position:
+      0 0,
+      50% 100%,
+      50% 100%,
+      100% 0;
+  }
+  66% {
+    background-position:
+      50% 0,
+      0 100%,
+      100% 100%,
+      50% 0;
+  }
+  100% {
+    background-position:
+      50% 50%,
+      0 50%,
+      100% 50%,
+      50% 50%;
+  }
+}
